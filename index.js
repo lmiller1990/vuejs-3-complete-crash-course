@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import PokemonApp from './pokemon/App.vue'
 
-createApp(App).mount('#app')
+createApp(PokemonApp).mount('#app')
