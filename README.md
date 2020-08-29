@@ -1,6 +1,22 @@
+## The Complete Vue.js 3 Crash Course
+
 Source code for my course, The Complete Vue.js 3 Crash Course. https://vuejs-course.com/courses/vuejs-3-complete-crash-course
 
+Watch the [introduction](https://vimeo.com/450478884) or preview the [first few videos](https://vimeo.com/450478884).
+
 We start from scratch, covering fundamentals and the classic "Options" API. We then do a few projects to see how to use the fundamentals in real apps, then move on to learning more advanced techniques like the Composition API, Vuex and Vue Router.
+
+## Getting Started
+
+- clone this repo
+- install yarn https://classic.yarnpkg.com/lang/en/
+- install Node.js https://nodejs.org/en/
+- run `yarn install` to install everything
+- run `yarn vite` to start the dev server
+- visit http://localhost:3000
+- that's it!
+
+## Content
 
 ```
 +-----------------------------+
