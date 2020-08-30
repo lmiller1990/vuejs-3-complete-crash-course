@@ -9,6 +9,10 @@
     Posts
   </router-link>
 
+  <router-link to="/asdf">
+    ASDF
+  </router-link>
+
   <div>
     <router-view />
   </div>

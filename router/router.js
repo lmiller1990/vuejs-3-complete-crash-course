@@ -14,14 +14,7 @@ export const router = createRouter({
     {
       name: 'posts',
       path: '/posts',
-      component: Posts,
-      children: [
-        {
-          name: 'post',
-          path: ':id',
-          component: Post
-        }
-      ]
+      component: Posts
     }
   ]
 })
