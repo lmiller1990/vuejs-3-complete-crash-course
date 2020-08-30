@@ -1,15 +1,10 @@
 import { reactive } from 'vue'
+import { testPosts } from './testPosts.js'
 
 class Store {
   constructor() {
     this.state = reactive({
-      posts: [
-        {
-          id: 1,
-          title: 'My post',
-          content: 'This is a post'
-        }
-      ]
+      posts: testPosts
     })
   }
 }
