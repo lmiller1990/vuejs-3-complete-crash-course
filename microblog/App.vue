@@ -13,7 +13,6 @@
     <template v-slot:description>
       <controls 
         :post="post" 
-        @setHashtag="setHashtag"
       />
     </template>
   </card>
@@ -32,25 +31,19 @@ export default {
   },
 
   setup() {
-    const currentHashtag = ref()
-
-    const setHashtag = (tag) => {
-      currentHashtag.value = tag
-    }
-
     const filteredPosts = computed(() => {
-      if (!currentHashtag.value) {
+      if (!store.state.currentHashtag) {
         return store.state.posts
       }
 
       return store.state.posts.filter(
-        post => post.hashtags.includes(currentHashtag.value)
+        post => post.hashtags.includes(
+          store.state.currentHashtag)
       )
     })
 
     return {
       filteredPosts,
-      setHashtag
     }
   }
 }

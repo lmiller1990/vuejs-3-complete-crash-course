@@ -6,7 +6,6 @@
     <hashtag 
       v-for="tag in post.hashtags" 
       :hashtag="tag"
-      @setHashtag="setHashtag"
     />
   </div>
 </template>
@@ -20,16 +19,6 @@ export default {
   props: {
     post: {
       type: Object
-    }
-  },
-
-  setup(props, ctx) {
-    const setHashtag = (tag) => {
-      ctx.emit('setHashtag', tag)
-    }
-
-    return {
-      setHashtag
     }
   }
 }

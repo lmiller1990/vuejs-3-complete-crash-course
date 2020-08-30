@@ -15,7 +15,7 @@ export default {
 
   setup(props, ctx) {
     const setHashtag = () => {
-      ctx.emit('setHashtag', props.hashtag)
+      store.setHashtag(props.hashtag)
     }
 
     return {
