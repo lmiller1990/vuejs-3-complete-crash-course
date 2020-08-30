@@ -1,6 +1,8 @@
 <template>
-  <h4>Posts</h4>
-  <router-view />
+  <h4>Title</h4>
+  <p>
+    Content
+  </p>
 </template>
 
 <script>
