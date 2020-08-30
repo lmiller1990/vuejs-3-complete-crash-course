@@ -1,4 +1,5 @@
 <template>
+  <input type="text" :value="currentHashtag" @input="setHashtag" />
   <card 
     v-for="post in filteredPosts"
   >
@@ -42,8 +43,14 @@ export default {
       )
     })
 
+    const setHashtag = (evt) => {
+      store.setHashtag(evt.target.value)
+    }
+
     return {
       filteredPosts,
+      setHashtag,
+      currentHashtag: computed(() => store.state.currentHashtag)
     }
   }
 }
