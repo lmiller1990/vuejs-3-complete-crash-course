@@ -32,23 +32,12 @@ export default {
   },
 
   setup() {
-    const filteredPosts = computed(() => {
-      if (!store.state.currentHashtag) {
-        return store.state.posts
-      }
-
-      return store.state.posts.filter(
-        post => post.hashtags.includes(
-          store.state.currentHashtag)
-      )
-    })
-
     const setHashtag = (evt) => {
       store.setHashtag(evt.target.value)
     }
 
     return {
-      filteredPosts,
+      filteredPosts: store.filteredPosts,
       setHashtag,
       currentHashtag: computed(() => store.state.currentHashtag)
     }
