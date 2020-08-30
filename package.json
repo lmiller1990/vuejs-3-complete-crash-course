@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "vite": "^1.0.0-rc.4"
+    "vite": "^1.0.0-rc.4",
+    "vue-router": "^4.0.0-beta.7"
   }
 }
