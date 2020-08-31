@@ -2,7 +2,7 @@
   <div>
     <div class="like">
       <button @click="like">
-        Like
+        ❤️
       </button>
       <div>
         {{ post.likes }}
@@ -45,5 +45,11 @@ export default {
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 </style>

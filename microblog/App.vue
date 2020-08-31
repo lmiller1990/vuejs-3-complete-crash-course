@@ -1,22 +1,25 @@
 <template>
-  <input type="text" :value="currentHashtag" @input="setHashtag" />
-  <card 
-    v-for="post in filteredPosts"
-  >
-    <template v-slot:title>
-      {{ post.title }}
-    </template>
+  <label for="search">Search Hashtag: #</label>
+  <input id="search" type="text" :value="currentHashtag" @input="setHashtag" />
+  <div class="cards">
+    <card 
+      v-for="post in filteredPosts"
+    >
+      <template v-slot:title>
+        {{ post.title }}
+      </template>
 
-    <template v-slot:content>
-      {{ post.content }}
-    </template>
+      <template v-slot:content>
+        {{ post.content }}
+      </template>
 
-    <template v-slot:description>
-      <controls 
-        :post="post" 
-      />
-    </template>
-  </card>
+      <template v-slot:description>
+        <controls 
+          :post="post" 
+        />
+      </template>
+    </card>
+  </div>
 </template>
 
 <script>
@@ -44,3 +47,26 @@ export default {
   }
 }
 </script>
+
+<style>
+input {
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+}
+
+.cards {
+  margin: 10px 0;
+  display: flex;
+}
+
+.title {
+  height: 40px;
+}
+
+.content {
+  height: 150px;
+}
+</style>
