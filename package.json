@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@vue/compiler-sfc": "^3.0.0-rc.9",
     "vite": "^1.0.0-rc.4",
-    "vue-router": "^4.0.0-beta.7"
+    "vue": "^3.0.0-rc.9",
+    "vue-router": "^4.0.0-beta.7",
+    "vuex": "^4.0.0-beta.4"
   }
 }
