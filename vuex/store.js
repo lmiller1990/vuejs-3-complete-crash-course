@@ -21,7 +21,7 @@ export const store = createStore({
   },
 
   actions: {
-    async fetchDataFromServer(context) {
+    async fetchDataFromServer() {
       await delay()
       console.log('LOG')
     }
