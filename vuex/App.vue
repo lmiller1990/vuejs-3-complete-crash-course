@@ -12,9 +12,24 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
+import { computed } from 'vue'
+
 export default {
-  data() {
+  setup() {
+    const store = useStore()
+
+    const fetchPostData = (id) => {
+      store.dispatch('posts/fetchDataFromServer', id)
+    }
+
+    const currentPost = computed(() => {
+      return store.state.posts.currentPost
+    })
+
     return {
+      currentPost,
+      fetchPostData,
       posts: [
         { 
           id: 1,
@@ -25,21 +40,6 @@ export default {
           title: 'Post #2'
         }
       ]
-    }
-  },
-
-  computed: {
-    currentPost() {
-      return this.$store.state.posts.currentPost
-    }
-  },
-
-  methods: {
-    fetchPostData(id) {
-      // mutation
-      // this.$store.commit('setPostId', id)
-      // action
-      this.$store.dispatch('posts/fetchDataFromServer', id)
     }
   }
 }
