@@ -5,7 +5,10 @@
   >
     {{ post.title }}
   </button>
-    Current Post Id: {{ currentPostId }}
+    <div v-if="currentPost">
+      <h1>{{ currentPost.title }}</h1>
+      <p>{{ currentPost.content }}</p>
+    </div>
 </template>
 
 <script>
@@ -26,8 +29,8 @@ export default {
   },
 
   computed: {
-    currentPostId() {
-      return this.$store.state.currentPostId
+    currentPost() {
+      return this.$store.state.posts.currentPost
     }
   },
 
@@ -36,7 +39,7 @@ export default {
       // mutation
       // this.$store.commit('setPostId', id)
       // action
-      this.$store.dispatch('fetchDataFromServer')
+      this.$store.dispatch('posts/fetchDataFromServer', id)
     }
   }
 }

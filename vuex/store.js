@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { testPosts } from '../microblog/testPosts.js'
 
 const delay = () => new Promise(res => 
   setTimeout(res, 1000))
@@ -7,24 +8,40 @@ const delay = () => new Promise(res =>
 // mutations
 // getters
 // actions
-export const store = createStore({
+
+const posts = {
+  namespaced: true,
   state() {
     return {
-      currentPostId: null
+      currentPost: null
     }
   },
 
   mutations: {
-    setPostId(state, id) {
-      state.currentPostId = id
+    setPost(state, post) {
+      state.currentPost = post
     }
   },
 
   actions: {
-    async fetchDataFromServer() {
+    async fetchDataFromServer(ctx, id) {
       await delay()
-      console.log('LOG')
+      const post = testPosts.find(post => {
+        return post.id === id
+      })
+
+      ctx.commit('setPost', post)
     }
   }
+}
+
+
+export const store = createStore({
+  modules: {
+    posts,
+  }
 })
+
+// getters
+// modules
 
