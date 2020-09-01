@@ -6,6 +6,5 @@ import Microblog from './microblog/App.vue'
 import VuexApp from './vuex/App.vue'
 import { store } from './vuex/store.js'
 
-const app = createApp(VuexApp)
-app.use(store)
+const app = createApp(App)
 app.mount('#app')
