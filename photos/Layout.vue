@@ -37,7 +37,9 @@ export default {
 
 .sidebar { 
   padding: 10px;
-  width: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 300px;
   border-right: 2px solid silver;
 }
 
