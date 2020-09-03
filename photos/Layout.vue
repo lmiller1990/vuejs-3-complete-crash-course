@@ -1,5 +1,5 @@
 <template>
-t <div class="wrapper">
+  <div class="wrapper">
     <div class="header">
       <slot name="header" />
     </div>
@@ -36,7 +36,8 @@ export default {
 }
 
 .sidebar { 
-  width: 200px;
+  padding: 10px;
+  width: 300px;
   border-right: 2px solid silver;
 }
 
