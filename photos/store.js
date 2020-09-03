@@ -3,6 +3,6 @@ import { albums } from './albums.js'
 
 export const store = createStore({
   modules: {
-    albums
+    albums,
   }
 })

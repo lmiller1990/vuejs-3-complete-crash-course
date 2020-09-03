@@ -5,7 +5,9 @@
     </template>
 
     <template v-slot:sidebar>
-      <div v-for="album in albums">
+      <div 
+        v-for="album in albums"
+      >
         {{ album.title }}
       </div>
     </template>
@@ -20,19 +22,17 @@ import Layout from './Layout.vue'
 
 export default {
   components: {
-    Layout
-  },
-
-  data() {
-    return {
-      albums: []
-    }
+    Layout,
   },
 
   async created() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/albums')
-    const data = await res.json()
-    this.albums = data
+    this.$store.dispatch('albums/fetchAlbums')
+  },
+
+  computed: {
+    albums() {
+      return this.$store.state.albums.all
+    }
   }
 }
 </script>
