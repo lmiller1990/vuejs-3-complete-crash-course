@@ -31,6 +31,21 @@ export default {
     this.$store.dispatch('albums/fetchAlbums')
   },
 
+  methods: {
+    fetchPhotosForAlbum(albumId) {
+      this.$store.dispatch('photos/fetchPhotosForAlbum', { id: albumId })
+    }
+  },
+
+  watch: {
+    $route: {
+      handler(val) {
+        this.fetchPhotosForAlbum(val.params.id)
+      },
+      immediate: true
+    }
+  },
+
   computed: {
     albums() {
       return this.$store.state.albums.all

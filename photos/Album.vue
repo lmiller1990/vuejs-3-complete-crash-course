@@ -19,7 +19,6 @@ export default {
     const albumLink = `/albums/${props.album.id}`
 
     const click = () => {
-      store.dispatch('photos/fetchPhotosForAlbum', { album: props.album })
     }
 
     return {
