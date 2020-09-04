@@ -1,7 +1,7 @@
 <template>
   <layout>
     <template v-slot:header>
-      Header
+      Capstone Project - Photo App (Vuex, Vue Router)
     </template>
 
     <template v-slot:sidebar>

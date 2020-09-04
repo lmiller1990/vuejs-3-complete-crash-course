@@ -27,6 +27,11 @@ export default {
 
 .header {
   height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+  font-size: 20px;
+  font-family: Arial;
 }
 
 .main {
@@ -43,4 +48,8 @@ export default {
   border-right: 2px solid silver;
 }
 
+.content {
+  width: 100%;
+  margin: 10px;
+}
 </style>
